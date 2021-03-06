@@ -19,7 +19,7 @@ categories: ElasticSearch
 brew install elasticsearch
 </code>
 </pre>
-<div style="background-color:red">
+</div>
 명령어를 통해 간단히 설치 할 수 있다.
 
 설치 완료 후 
