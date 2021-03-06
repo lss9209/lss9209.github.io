@@ -1,9 +1,11 @@
+---
 title: "ElasticSearch 성능확인과 ELK Stack의 활용"
 date: 2021-03-06 15:10:47 -0400
 categories: ElasticSearch
 ---
 # 엘라스틱 성능 확인하기
 ---
+
 ## 상태정보 확인
 ### 클러스터 상태정보 확인
 curl -s "http://localhost:9200/_cat/health?format=json&pretty"로 클러스터의 상태 확인 가능 <br>
