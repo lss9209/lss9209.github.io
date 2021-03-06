@@ -13,13 +13,11 @@ categories: ElasticSearch
 필자는 맥OS 환경에서 Brew 패키지매니저로 설치하였다. 만약 다른 패키지매니저를 쓴다면 명령어 형식이 조금 다를 수도 있음을 유의바란다.
 
 이런 조건이 갖춰 졌다면
-<div style="background-color:red">
 <pre>
 <code>
 brew install elasticsearch
 </code>
 </pre>
-</div>
 명령어를 통해 간단히 설치 할 수 있다.
 
 설치 완료 후 
