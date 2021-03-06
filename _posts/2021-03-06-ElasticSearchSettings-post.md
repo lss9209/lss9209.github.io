@@ -6,6 +6,7 @@ categories: ElasticSearch
 # 엘라스틱 서치의 환경설정
 ---
 
+## elasticsearch.yml 
 <div style="background-color:#add8e6; border-radius: 25px;">
 <pre>
 <code>
@@ -101,6 +102,8 @@ path.logs: /usr/local/var/log/elasticsearch/ #5 엘라스틱서치의 어플리�
 </code>
 </pre>
 </div>
+
+## JVM.Options 
 
 <div style="background-color:#add8e6; border-radius: 25px;">
 <pre>
