@@ -99,51 +99,13 @@ isangseung@isangseung-ui-MacBookPro ~ % curl -s "http://localhost:9200/contents/
 </pre>
 </div>
 
-<div style="background-color:#add8e6; border-radius: 25px;">
-<pre>
-<code>
-isangseung@isangseung-ui-MacBookPro ~ % curl -s "http://localhost:9200/contents/_mappings?pretty"
-{
-  "contents" : {
-    "mappings" : {
-      "properties" : {
-        "author" : {
-          "type" : "text",
-          "fields" : {
-            "keyword" : {
-              "type" : "keyword",
-              "ignore_above" : 256
-            }
-          }
-        },
-        "title" : {
-          "type" : "text",
-          "fields" : {
-            "keyword" : {
-              "type" : "keyword",
-              "ignore_above" : 256
-            }
-          }
-        }
-      }
-    }
-  }
-}
-</code>
-</pre>
-</div>
-
-##검색 기능
+## 검색 기능
 
 검색은 특정 조건을 만족시키는 문서들을 조회하는 기능이다. 검색의 종류에는 필터와 쿼리가 있다. <br>
 쿼리: 문자열 안에 특정 문자가 포함되었는지 아닌지로 확인하는 과정. <br>
 필터: 예/아니오로 떨어지는 조건들을 통해 결과들을 걸러내는 과정 <br>
 
 아래 코드는 필터를 적용한 검색의 예이다.
-
-</code>
-</pre>
-</div>
 
 <div style="background-color:#add8e6; border-radius: 25px;">
 <pre>
@@ -165,7 +127,7 @@ quote> }
 </pre>
 </div>
 
-##분석 기능
+## 분석 기능
 
 아래와 같은 코드를 통해 여러가지 지표들을 통계를 내는 등의 분석기능을 사용할 수 있다. 아래의 코드는 특정 필드에 나오는 단어의 빈도를 세는 분석쿼리이다.
 
