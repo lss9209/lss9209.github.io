@@ -13,19 +13,24 @@ categories: ElasticSearch
 필자는 맥OS 환경에서 Brew 패키지매니저로 설치하였다. 만약 다른 패키지매니저를 쓴다면 명령어 형식이 조금 다를 수도 있음을 유의바란다.
 
 이런 조건이 갖춰 졌다면
-'''
+<pre>
+<code>
 brew install elasticsearch
-'''
+</code>
+</pre>
 명령어를 통해 간단히 설치 할 수 있다.
 
 설치 완료 후 
-'''
+<pre>
+<code>
 elasticsearch
-'''
+</pre>
+</code>
 명령어를 통해 실행 할 수 있다.
 
 실행되었는지 확인해보려면 웹브라우저로 localhost:9200으로 접속해본다. 만약
-'''
+<pre>
+<code>
 {
   "name" : "isangseung-ui-MacBookPro.local",
   "cluster_name" : "elasticsearch_brew",
@@ -43,7 +48,8 @@ elasticsearch
   },
   "tagline" : "You Know, for Search"
 }
-'''
+</pre>
+</code>
 와 같이 뜬다면 설치 및 실행이 잘 된 것이다.
 
 참고서적: 기초부터 다지는 ElasticSearch 운영 노하우 (박상헌 등 저, 프로그래밍 인사이트)
