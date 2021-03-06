@@ -24,8 +24,8 @@ brew install elasticsearch
 <pre>
 <code>
 elasticsearch
-</pre>
 </code>
+</pre>
 명령어를 통해 실행 할 수 있다.
 
 실행되었는지 확인해보려면 웹브라우저로 localhost:9200으로 접속해본다. 만약
@@ -48,8 +48,8 @@ elasticsearch
   },
   "tagline" : "You Know, for Search"
 }
-</pre>
 </code>
+</pre>
 와 같이 뜬다면 설치 및 실행이 잘 된 것이다.
 
 참고서적: 기초부터 다지는 ElasticSearch 운영 노하우 (박상헌 등 저, 프로그래밍 인사이트)
