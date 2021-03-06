@@ -1,5 +1,5 @@
 ---
-title: "ElasticSearch의 기능 살펴보기"
+title: "ElasticSearch 운영하기"
 date: 2021-03-06 13:44:47 -0400
 categories: ElasticSearch
 ---
