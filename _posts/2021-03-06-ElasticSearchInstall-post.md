@@ -21,7 +21,7 @@ brew install elasticsearch
 명령어를 통해 간단히 설치 할 수 있다.
 
 설치 완료 후 
-<pre style="background-color:red">
+<pre style="background-color:red;">
 <code>
 elasticsearch
 </code>
