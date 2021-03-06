@@ -97,6 +97,75 @@ path.logs: /usr/local/var/log/elasticsearch/ #5 엘라스틱서치의 어플리�
 # Require explicit names when deleting indices:
 #
 #action.destructive_requires_name: true #12 인덱스를 와일드카드 표현식의나 _all로 삭제할 수 없도록 막아놓은 설정 이를 통해 실수로 인한 데이터 유실을 막을 수 있다.
+이 외에도 노드의 역할주기또한 이 파일에서 할 수 있다.
+</code>
+</pre>
+</div>
+
+<div style="background-color:#add8e6; border-radius: 25px;">
+<pre>
+<code>
+## JVM configuration
+
+################################################################
+## IMPORTANT: JVM heap size
+################################################################
+##
+## You should always set the min and max JVM heap
+## size to the same value. For example, to set
+## the heap to 4 GB, set:
+##
+## -Xms4g
+## -Xmx4g
+##
+## See https://www.elastic.co/guide/en/elasticsearch/reference/current/heap-size.html
+## for more information
+##
+################################################################
+
+# Xms represents the initial size of total heap space
+# Xmx represents the maximum size of total heap space
+
+-Xms1g #1 JVM에서 사용할 힙메모리 크기를 부여하는 옵션 이값만큼 최소로 확보했다가 필요에 따라 아래의 #2에 설정한 만큼 힙메모리가 늘어난다. 그러나 동적으로 늘리는 과정에서 성능이 낮아질 수 있으므로 두 값을 같게 설정하는 것이 권고된다.
+-Xmx1g #2
+
+################################################################
+## Expert settings
+################################################################
+##
+## All settings below this section are considered
+## expert settings. Don't tamper with them unless
+## you understand what you are doing
+##
+################################################################
+
+## GC configuration
+8-13:-XX:+UseConcMarkSweepGC #3 GC방식을 설정하는 변수, 웬만하면 기본값에서 바꾸지 않는다.
+8-13:-XX:CMSInitiatingOccupancyFraction=75 #4 힙메모리의 어느정도가 차면 old GC를 실행할 것인지 결정한다. 낮게 설정하면 자주 old GC가 발생하고 높게 하면 빈도는 낮으나 한번의 old GC의 수행시간이 증가한다. 참고로 old GC 수행중에는 stop-the-world가 발생하여 클러스터의 동작이 멈춰 서비스 진행이 불가해진다.
+8-13:-XX:+UseCMSInitiatingOccupancyOnly #5 4의 설정만을 기준으로 old GC를 수행하겠다는 설정, 이 값을 설정안하면 #4의 기준외의 별도의 기준으로 old GC가 동작한다.
+
+## G1GC Configuration #6 디폴트 GC인 위의 CMS GC가 아닌 다른 GC를 쓰려고 할때 하는 설정인데 다양한 이슈가 발생될 수 있으므로 전문적인 테스트 하에 이 설정으로 변경을 결정하여야 하며 웬만하면 디폴트 설정인 위의 CMS GC를 쓰는 것이 권장된다.
+# NOTE: G1 GC is only supported on JDK version 10 or later
+# to use G1GC, uncomment the next two lines and update the version on the
+# following three lines to your version of the JDK
+# 10-13:-XX:-UseConcMarkSweepGC
+# 10-13:-XX:-UseCMSInitiatingOccupancyOnly
+14-:-XX:+UseG1GC
+14-:-XX:G1ReservePercent=25
+14-:-XX:InitiatingHeapOccupancyPercent=30
+
+## JVM temporary directory
+-Djava.io.tmpdir=${ES_TMPDIR}
+
+## heap dumps
+
+# generate a heap dump when an allocation from the Java heap fails
+# heap dumps are created in the working directory of the JVM
+-XX:+HeapDumpOnOutOfMemoryError
+
+# specify an alternative path for heap dumps; ensure the directory exists and
+# has sufficient space
+-XX:HeapDumpPath=data
 </code>
 </pre>
 </div>
