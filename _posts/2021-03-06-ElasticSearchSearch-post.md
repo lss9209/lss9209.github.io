@@ -1,5 +1,5 @@
 ---
-title: "ElasticSearch의 개념"
+title: "ElasticSearch를 검색엔진으로 활용하기"
 date: 2021-03-13 10:00:47 -0400
 categories: ElasticSearch
 ---
