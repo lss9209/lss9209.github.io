@@ -22,3 +22,5 @@ cats are friend each others'로 바뀐다. 그리고 토크나이저에서 dogs,
 Query질의와 Filter질의의 가장 큰 차이점은 Query는 얼마나 문서가 조건에 부합하는지에 대한 스코어를 매긴다. 다만 Filter는 오로지 일치/불일치 여부만 판단하므로 score처리가 없어 빠르다. 그리고 Filter의 term쿼리는 <br>
 anylize과정이 없다. 이 점이 query의 match와 뚜렷이 구분되는 점이다. 가령 query의 match로 질의를 하면 Mice는 mice -> mouse로 변환되어서 검색된다. 그러나 filter의 term으로 질의하면 mice 그대로 질의가 된다.<br>
 
+여러가지 검색질의문들을 활용하는 방안은 https://esbook.kimjmin.net/05-search에 설명이 아주 잘되어있으니 참고하면 좋겠다.
+
